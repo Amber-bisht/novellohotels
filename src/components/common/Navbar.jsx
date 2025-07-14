@@ -77,7 +77,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/">
           <img
-            src="https://res.cloudinary.com/dqggm4k7u/image/upload/v1752477249/Novello_Globe_yfhuos.png"
+            src="https://res.cloudinary.com/dqggm4k7u/image/upload/v1752484737/logo-white_yexdbw.png"
             alt="Novello Hotels Logo"
             onError={(e) => (e.target.src = "/fallback-logo.png")}
           />
