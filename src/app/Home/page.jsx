@@ -76,7 +76,7 @@ const Page = () => {
           </div>
           <div className="relative">
             <img
-              src="./assets/Homepic/balcony.png"
+              src="https://res.cloudinary.com/dqggm4k7u/image/upload/v1752485920/balcony_image_hyl9hw.jpg"
               alt="Private Balcony"
               className="rounded-lg shadow-lg w-80 md:w-96"
             />
