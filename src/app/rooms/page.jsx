@@ -61,8 +61,8 @@ const RoomsPage = () => {
 
 
   return (
-    <div>
-      <div className="relative w-full">
+    <div className="pt-24">
+      <div className="relative w-full h-[60vh]">
         <Image
           src="/assets/rooms/roomimg.png"
           alt="Rooms Designed for Your Comfort"
