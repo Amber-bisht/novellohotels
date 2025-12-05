@@ -29,7 +29,7 @@ const ContactPage = () => {
       {/* Hero Section */}
       <div className="relative w-full h-[500px]">
         <Image
-          src="/assets/contact/contact.png"
+          src="/assets/contact/contact.webp"
           alt="Welcome"
           fill
           priority

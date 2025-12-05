@@ -78,7 +78,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="https://res.cloudinary.com/dqggm4k7u/image/upload/v1752484737/logo-white_yexdbw.png"
+            src="/downloaded-webp/logo-white_yexdbw.webp"
             alt="Novello Hotels Logo"
             width={100}
             height={40}

@@ -8,7 +8,7 @@ const About = () => {
       {/* Image Section */}
       <div className="w-full md:w-1/2 flex justify-center">
         <Image
-          src="/assets/Homepic/About.png"
+          src="/assets/Homepic/About.webp"
           alt="Hotel Evergreen"
           width={450}
           height={300}

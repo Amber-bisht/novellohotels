@@ -8,7 +8,7 @@ const Page = () => {
       {/* Hero Section */}
       <div className="relative w-full h-[500px]">
         <Image
-          src="/assets/restaurant/restaurantImg.png"
+          src="/assets/restaurant/restaurantImg.webp"
           alt="Welcome"
           fill
           priority
@@ -51,7 +51,7 @@ const Page = () => {
         </div>
         <div className="md:w-1/2">
           <Image
-            src="/assets/restaurant/restaurant.png"
+            src="/assets/restaurant/restaurant.webp"
             alt="The Novello"
             width={800}
             height={600}

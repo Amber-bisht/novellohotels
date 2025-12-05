@@ -7,31 +7,31 @@ const ImageCarousel = () => {
   // Hard-coded images (no API call)
   const images = [
     {
-      url: "https://res.cloudinary.com/dvz0d0bdb/image/upload/v1740146256/hvwpgsg3c9rp8pf8glfq.jpg",
+      url: "/downloaded-webp/hvwpgsg3c9rp8pf8glfq.webp",
       orientation: "landscape"
     },
     {
-      url: "https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741677094/tidkepodsxahu7k9mq46.jpg",
+      url: "/downloaded-webp/tidkepodsxahu7k9mq46.webp",
       orientation: "portrait"
     },
     {
-      url: "https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741588068/yhdrqposgkdqx7eqwtr1.jpg",
+      url: "/downloaded-webp/yhdrqposgkdqx7eqwtr1.webp",
       orientation: "landscape"
     },
     {
-      url: "https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741339520/w8nwgpts09rwwptcbnqq.jpg",
+      url: "/downloaded-webp/w8nwgpts09rwwptcbnqq.webp",
       orientation: "landscape"
     },
     {
-      url: "https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741670475/rkb1mccwjdezeehmvbhs.jpg",
+      url: "/downloaded-webp/rkb1mccwjdezeehmvbhs.webp",
       orientation: "portrait"
     },
     {
-      url: "https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741677467/fc4epsh3jhpenmihm7ul.jpg",
+      url: "/downloaded-webp/fc4epsh3jhpenmihm7ul.webp",
       orientation: "landscape"
     },
     {
-      url: "https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741677094/tidkepodsxahu7k9mq46.jpg",
+      url: "/downloaded-webp/tidkepodsxahu7k9mq46.webp",
       orientation: "landscape"
     },
   ];

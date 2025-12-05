@@ -9,7 +9,7 @@ const page = () => {
           {/* welcome section */}
           <div className="relative w-full h-[500px]">
             <Image
-              src="/assets/about/imgabout.png"
+              src="/assets/about/imgabout.webp"
               alt="Welcome"
               fill
               priority

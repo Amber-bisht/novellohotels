@@ -30,7 +30,7 @@ const Contact = () => {
         {/* Left Section with Image */}
         <div>
           <Image
-            src="/assets/Homepic/contactimg.png"
+            src="/assets/Homepic/contactimg.webp"
             alt="Contact"
             width={800}
             height={600}

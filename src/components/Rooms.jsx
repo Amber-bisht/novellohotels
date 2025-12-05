@@ -10,17 +10,17 @@ const rooms = [
   {
     title: "Deluxe Room",
     // price: "₹ 5,000/Night",
-    image: "/assets/Homepic/room1.png",
+    image: "/assets/Homepic/room1.webp",
   },
   {
     title: "Executive Room with Balcony",
     // price: "₹ 7,500/Night",
-    image: "/assets/Homepic/room2.png",
+    image: "/assets/Homepic/room2.webp",
   },
   {
     title: "Executive Room with Mountain View",
     // price: "₹ 10,000/Night",
-    image: "/assets/Homepic/room3.png",
+    image: "/assets/Homepic/room3.webp",
   },
 ];
 

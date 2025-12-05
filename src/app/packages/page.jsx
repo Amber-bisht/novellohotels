@@ -8,7 +8,7 @@ const Page = () => {
       {/* Hero Section */}
       <div className="relative w-full h-[500px]">
         <Image
-          src="/assets/packages/packageImg.png"
+          src="/assets/packages/packageImg.webp"
           alt="Welcome"
           fill
           priority
@@ -29,7 +29,7 @@ const Page = () => {
           {/* Honeymoon Special */}
           <Link href = "/gallery"><div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <Image
-              src="/assets/packages/roomImg.png"
+              src="/assets/packages/roomImg.webp"
               alt="Honeymoon Special"
               width={800}
               height={533}
@@ -44,7 +44,7 @@ const Page = () => {
           <Link href="/gallery">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <Image
-              src="/assets/packages/BreakfastImg.png"
+              src="/assets/packages/BreakfastImg.webp"
               alt="Breakfast Special"
               width={800}
               height={533}

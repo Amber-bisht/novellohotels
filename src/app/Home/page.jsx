@@ -25,7 +25,7 @@ const Page = () => {
         <section className="relative h-screen">
           <div className="absolute inset-0">
             <Image
-              src="/assets/Homepic/bghome.png"
+              src="/assets/Homepic/bghome.webp"
               alt="Luxury Hotel"
               fill
               priority
@@ -70,7 +70,7 @@ const Page = () => {
         <div className="flex flex-col md:flex-row mx-auto items-center justify-evenly mt-10 space-y-6 md:space-y-0">
           <div className="relative">
             <Image
-              src="/assets/Homepic/pic1.png"
+              src="/assets/Homepic/pic1.webp"
               alt="Wifi and Internet"
               width={384}
               height={256}
@@ -82,7 +82,7 @@ const Page = () => {
           </div>
           <div className="relative">
             <Image
-              src="https://res.cloudinary.com/dqggm4k7u/image/upload/v1752485920/balcony_image_hyl9hw.jpg"
+              src="/downloaded-webp/balcony_image_hyl9hw.webp"
               alt="Private Balcony"
               width={384}
               height={256}
@@ -94,7 +94,7 @@ const Page = () => {
           </div>
           <div className="relative">
             <Image
-              src="/assets/Homepic/comfortable.png"
+              src="/assets/Homepic/comfortable.webp"
               alt="Comfortable Rooms"
               width={384}
               height={256}
@@ -125,12 +125,12 @@ const Page = () => {
           Our Best<span className="text-[#9A3D50]">Amenities</span>
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-9 place-items-center">
-          <Image src="/assets/Amenities/Ameniteies1.png" alt="Amenity 1" width={400} height={250} className="h-auto w-full max-w-[400px]" />
-          <Image src="/assets/Amenities/Ameniteies2.png" alt="Amenity 2" width={400} height={250} className="h-auto w-full max-w-[400px]" />
-          <Image src="/assets/Amenities/Ameniteies3.png" alt="Amenity 3" width={400} height={250} className="h-auto w-full max-w-[400px]" />
-          <Image src="/assets/Amenities/Ameniteies4.png" alt="Amenity 4" width={400} height={250} className="h-auto w-full max-w-[400px]" />
-          <Image src="/assets/Amenities/Ameniteies5.png" alt="Amenity 5" width={400} height={250} className="h-auto w-full max-w-[400px]" />
-          <Image src="/assets/Amenities/Ameniteies6.png" alt="Amenity 6" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies1.webp" alt="Amenity 1" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies2.webp" alt="Amenity 2" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies3.webp" alt="Amenity 3" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies4.webp" alt="Amenity 4" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies5.webp" alt="Amenity 5" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies6.webp" alt="Amenity 6" width={400} height={250} className="h-auto w-full max-w-[400px]" />
         </div>
       </div>
 

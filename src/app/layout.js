@@ -16,7 +16,7 @@ export const metadata = {
     url: "https://www.novellohotels.com",
     images: [
       {
-        url: "https://www.novellohotels.com/images/hero-image.jpg",
+        url: "/assets/Homepic/bghome.webp",
         width: 1200,
         height: 630,
         alt: "Novello Globe Hotel Mussoorie",

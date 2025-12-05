@@ -14,37 +14,37 @@ const Gallery = () => {
     {
       id: '1',
       category: 'Rooms',
-      photoLink: 'https://res.cloudinary.com/dvz0d0bdb/image/upload/v1740146256/hvwpgsg3c9rp8pf8glfq.jpg',
+      photoLink: '/downloaded-webp/hvwpgsg3c9rp8pf8glfq.webp',
     },
     {
       id: '2',
       category: 'Spa',
-      photoLink: 'https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741677094/tidkepodsxahu7k9mq46.jpg',
+      photoLink: '/downloaded-webp/tidkepodsxahu7k9mq46.webp',
     },
     {
       id: '3',
       category: 'Dining',
-      photoLink: 'https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741588068/yhdrqposgkdqx7eqwtr1.jpg',
+      photoLink: '/downloaded-webp/yhdrqposgkdqx7eqwtr1.webp',
     },
     {
       id: '4',
       category: 'Lobby',
-      photoLink: 'https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741339520/w8nwgpts09rwwptcbnqq.jpg',
+      photoLink: '/downloaded-webp/w8nwgpts09rwwptcbnqq.webp',
     },
     {
       id: '5',
       category: 'Rooms',
-      photoLink: 'https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741670475/rkb1mccwjdezeehmvbhs.jpg',
+      photoLink: '/downloaded-webp/rkb1mccwjdezeehmvbhs.webp',
     },
     {
       id: '6',
       category: 'Outdoors',
-      photoLink: 'https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741677467/fc4epsh3jhpenmihm7ul.jpg',
+      photoLink: '/downloaded-webp/fc4epsh3jhpenmihm7ul.webp',
     },
     {
       id: '7',
       category: 'Dining',
-      photoLink: 'https://res.cloudinary.com/dvz0d0bdb/image/upload/v1741677094/tidkepodsxahu7k9mq46.jpg',
+      photoLink: '/downloaded-webp/tidkepodsxahu7k9mq46.webp',
     },
   ];
 

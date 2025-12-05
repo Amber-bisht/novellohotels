@@ -25,10 +25,10 @@ const DestinationCards = () => {
   };
 
   const cardData = [
-    { src: "/assets/Homepic/Lal.png", title: "Lal Tibba  - Mussoorie" },
-    { src: "/assets/Homepic/kempty.png", title: "Kempty falls - Mussoorie" },
-    { src: "/assets/Homepic/George.png", title: "George Everest - Mussoorie" },
-    { src: "/assets/Homepic/Landour.png", title: "Landour - Mussoorie" },
+    { src: "/assets/Homepic/Lal.webp", title: "Lal Tibba  - Mussoorie" },
+    { src: "/assets/Homepic/kempty.webp", title: "Kempty falls - Mussoorie" },
+    { src: "/assets/Homepic/George.webp", title: "George Everest - Mussoorie" },
+    { src: "/assets/Homepic/Landour.webp", title: "Landour - Mussoorie" },
   ];
 
   return (

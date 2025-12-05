@@ -14,7 +14,7 @@ const RoomsPage = () => {
       // status: "Available",
       // guests: 2,
       // bed: 1,
-      image: "./assets/Homepic/room1.png",
+      image: "./assets/Homepic/room1.webp",
       link: "https://live.ipms247.com/booking/book-rooms-thenovelloglobehotel",
     },
     {
@@ -25,7 +25,7 @@ const RoomsPage = () => {
       // status: "Available",
       // guests: 2,
       // bed: 1,
-      image: "./assets/Homepic/room3.png",
+      image: "./assets/Homepic/room3.webp",
       link: "https://live.ipms247.com/booking/book-rooms-thenovelloglobehotel",
     },
     {
@@ -36,7 +36,7 @@ const RoomsPage = () => {
       // status: "Available",
       // guests: 3,
       // bed: 1,
-      image: "./assets/Homepic/room2.png",
+      image: "./assets/Homepic/room2.webp",
       link: "https://live.ipms247.com/booking/book-rooms-thenovelloglobehotel",
       
     },
@@ -64,7 +64,7 @@ const RoomsPage = () => {
     <div className="pt-24">
       <div className="relative w-full h-[60vh]">
         <Image
-          src="/assets/rooms/roomimg.png"
+          src="/assets/rooms/roomimg.webp"
           alt="Rooms Designed for Your Comfort"
           fill
           priority
