@@ -76,7 +76,7 @@ const Footer = () => {
 
       {/* Copyright Section */}
       <div className="border-t border-gray-700 mt-4 pt-4 text-center">
-        <p>Copyright 2024 by Novello</p>
+        <p>Copyright 2025 by Novello</p>
       </div>
     </footer>
   );

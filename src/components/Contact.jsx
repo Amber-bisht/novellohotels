@@ -10,8 +10,14 @@ const Contact = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Form Submitted:", data);
-    alert("Message sent successfully!");
+    const { name, email, message } = data;
+    const whatsappMessage = `Hello, I am ${name}. My email is ${email}. Message: ${message}`;
+    const phone = "918445581177";
+    const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    window.open(whatsappURL, "_blank");
   };
 
   return (
@@ -32,7 +38,7 @@ const Contact = () => {
         {/* Right Section with Form */}
         <div>
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={(e) => e.preventDefault()}
             className="bg-gray-100 p-6 rounded-lg shadow-md space-y-4"
           >
             {/* Name Field */}
@@ -84,7 +90,8 @@ const Contact = () => {
 
             {/* Submit Button */}
             <button
-              type="submit"
+              type="button"
+              onClick={handleSubmit(onSubmit)}
               className="w-full bg-rose-600 text-white font-medium py-2 rounded hover:bg-rose-700"
             >
               Send
