@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { useForm } from "react-hook-form";
 
 const Contact = () => {
@@ -28,10 +29,12 @@ const Contact = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         {/* Left Section with Image */}
         <div>
-          <img
-            src="./assets/Homepic/contactimg.png"
+          <Image
+            src="/assets/Homepic/contactimg.png"
             alt="Contact"
-            className="w-full rounded-lg shadow-md"
+            width={800}
+            height={600}
+            className="w-full rounded-lg shadow-md h-auto"
           />
         </div>
 
@@ -43,9 +46,15 @@ const Contact = () => {
           >
             {/* Name Field */}
             <div>
-              <label className="block text-sm font-medium mb-1">Name</label>
+              <label
+                className="block text-sm font-medium mb-1"
+                htmlFor="contact-name"
+              >
+                Name
+              </label>
               <input
                 type="text"
+                id="contact-name"
                 {...register("name", { required: "Name is required" })}
                 className="w-full p-2 rounded border border-gray-300 focus:ring-rose-500 focus:border-rose-500"
               />
@@ -56,9 +65,15 @@ const Contact = () => {
 
             {/* Email Field */}
             <div>
-              <label className="block text-sm font-medium mb-1">Email</label>
+              <label
+                className="block text-sm font-medium mb-1"
+                htmlFor="contact-email"
+              >
+                Email
+              </label>
               <input
                 type="email"
+                id="contact-email"
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -75,9 +90,15 @@ const Contact = () => {
 
             {/* Message Field */}
             <div>
-              <label className="block text-sm font-medium mb-1">Message</label>
+              <label
+                className="block text-sm font-medium mb-1"
+                htmlFor="contact-message"
+              >
+                Message
+              </label>
               <textarea
                 rows="4"
+                id="contact-message"
                 {...register("message", { required: "Message is required" })}
                 className="w-full p-2 rounded border border-gray-300 focus:ring-rose-500 focus:border-rose-500"
               ></textarea>

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Page = () => {
@@ -6,10 +7,13 @@ const Page = () => {
     <div>
       {/* Hero Section */}
       <div className="relative w-full h-[500px]">
-        <img
+        <Image
           src="/assets/restaurant/restaurantImg.png"
           alt="Welcome"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-40">
           <h1 className="text-white text-4xl md:text-6xl font-bold text-center">
@@ -46,10 +50,12 @@ const Page = () => {
           </Link>
         </div>
         <div className="md:w-1/2">
-          <img
+          <Image
             src="/assets/restaurant/restaurant.png"
             alt="The Novello"
-            className="rounded-lg shadow-lg"
+            width={800}
+            height={600}
+            className="rounded-lg shadow-lg h-auto w-full"
           />
         </div>
       </div>

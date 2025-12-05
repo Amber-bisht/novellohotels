@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -7,10 +8,13 @@ const page = () => {
         <div>
           {/* welcome section */}
           <div className="relative w-full h-[500px]">
-            <img
-              src="./assets/about/imgabout.png"
+            <Image
+              src="/assets/about/imgabout.png"
               alt="Welcome"
-              className="w-full h-full object-cover"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
               <h1 className="text-white text-4xl md:text-6xl font-bold text-center">

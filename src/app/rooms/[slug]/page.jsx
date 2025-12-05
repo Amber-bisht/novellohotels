@@ -71,9 +71,11 @@
 //                             </h2>
 //                             {
 //                                 roomData?.roomImage.length > 0 ? (<div className="relative">
-//                                     <img
+//                                     <Image
 //                                         src={roomData?.roomImage[currentSlide]}
 //                                         alt={`Slide ${currentSlide + 1}`}
+//                                         width={800}
+//                                         height={533}
 //                                         className="w-full h-auto object-cover rounded-t-lg transition-all duration-500 ease-in-out"
 //                                     />
 //                                     <button

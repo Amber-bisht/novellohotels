@@ -19,12 +19,14 @@ const Footer = () => {
           <Link
               href="https://www.instagram.com/thenovello_mussooriehotel?igsh=MTI3dmM4Mzd1d3Mydg=="
               target="_blank"
+              aria-label="Visit Novello on Instagram"
             >
             <FaInstagram className="text-2xl cursor-pointer hover:text-red-500" />
             </Link>
             <Link
               href="https://www.facebook.com/profile.php?id=61567059387653"
               target="_blank"
+              aria-label="Visit Novello on Facebook"
             >
               <FaFacebook className="text-2xl cursor-pointer hover:text-red-500" />
             </Link>

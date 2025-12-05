@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const About = () => {
@@ -6,10 +7,12 @@ const About = () => {
     <div className="flex flex-col md:flex-row items-center bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 p-8 md:p-12 rounded-lg shadow-md gap-8">
       {/* Image Section */}
       <div className="w-full md:w-1/2 flex justify-center">
-        <img
-          src="./assets/Homepic/About.png"
+        <Image
+          src="/assets/Homepic/About.png"
           alt="Hotel Evergreen"
-          className="rounded-xl shadow-lg max-w-full md:max-w-[450px] transform hover:scale-105 transition-transform duration-300"
+          width={450}
+          height={300}
+          className="rounded-xl shadow-lg max-w-full md:max-w-[450px] transform hover:scale-105 transition-transform duration-300 h-auto"
         />
       </div>
       {/* Text Section */}

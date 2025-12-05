@@ -4,7 +4,7 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-      domains: ['res.cloudinary.com'], // Add the allowed image domain here
+      domains: ['res.cloudinary.com', 'novellohotels.com'], // Allowed image domains
     },
   };
   

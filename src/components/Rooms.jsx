@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -50,9 +51,11 @@ export default function RoomPreviewSection() {
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-lg"
             >
-              <img
+              <Image
                 src={room.image}
                 alt={room.title}
+                width={600}
+                height={400}
                 className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">

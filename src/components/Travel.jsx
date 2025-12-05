@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -45,15 +46,17 @@ const DestinationCards = () => {
               key={index}
               className="bg-white border border-gray-200 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
             >
-              <img
+              <Image
                 src={card.src}
                 alt={card.title}
+                width={400}
+                height={256}
                 className="w-full h-64 object-cover rounded-t-lg"
               />
               <div className="p-4">
-                <h3 className="font-semibold text-lg text-gray-900 mb-2 truncate">
+                <h2 className="font-semibold text-lg text-gray-900 mb-2 truncate">
                   {card.title}
-                </h3>
+                </h2>
                 {/* <p className="text-gray-600">
                   Discover the beauty of this destination.
                 </p> */}
@@ -67,15 +70,17 @@ const DestinationCards = () => {
             {cardData.map((card, index) => (
               <div key={index} className="px-3">
                 <div className="bg-white border border-gray-200 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                  <img
+                  <Image
                     src={card.src}
                     alt={card.title}
+                    width={400}
+                    height={256}
                     className="w-full h-64 object-cover rounded-t-lg"
                   />
                   <div className="p-4">
-                    <h3 className="font-semibold text-lg text-gray-900 mb-2 truncate">
+                    <h2 className="font-semibold text-lg text-gray-900 mb-2 truncate">
                       {card.title}
-                    </h3>
+                    </h2>
                     <p className="text-gray-600">
                       Discover the beauty of this destination.
                     </p>

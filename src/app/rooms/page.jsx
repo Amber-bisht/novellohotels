@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { fetchRooms } from "../../lib/apis";
 
@@ -62,10 +63,13 @@ const RoomsPage = () => {
   return (
     <div>
       <div className="relative w-full">
-        <img
-          src="./assets/rooms/roomimg.png"
+        <Image
+          src="/assets/rooms/roomimg.png"
           alt="Rooms Designed for Your Comfort"
-          className="w-full h-[80vh] object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white text-center">
@@ -78,9 +82,11 @@ const RoomsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {rooms.map((room) => (
             <div key={room.id} className="border rounded-lg shadow-lg overflow-hidden">
-              <img
-                src={room.image}
+              <Image
+                src={room.image.replace("./", "/")}
                 alt={room.name}
+                width={600}
+                height={360}
                 className="w-full h-56 object-cover"
               />
               <div className="p-4">
@@ -121,9 +127,11 @@ const RoomsPage = () => {
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {allRooms.filter(room => room?.roomStatus === 'Available').map((room) => (
             <div key={room._id} className="border rounded-lg shadow-lg overflow-hidden">
-              <img
+              <Image
                 src={room?.roomImage[0]}
                 alt={room?.roomName}
+                width={600}
+                height={360}
                 className="w-full h-56 object-cover"
               />
               <div className="p-4">

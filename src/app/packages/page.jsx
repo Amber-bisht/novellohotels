@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link'; 
 
 const Page = () => {
@@ -6,10 +7,13 @@ const Page = () => {
     <div className="w-full">
       {/* Hero Section */}
       <div className="relative w-full h-[500px]">
-        <img
-          src="./assets/packages/packageImg.png"
+        <Image
+          src="/assets/packages/packageImg.png"
           alt="Welcome"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
           <h1 className="text-white text-4xl md:text-6xl font-bold text-center">
@@ -24,10 +28,12 @@ const Page = () => {
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
           {/* Honeymoon Special */}
           <Link href = "/gallery"><div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img
-              src="./assets/packages/roomImg.png"
+            <Image
+              src="/assets/packages/roomImg.png"
               alt="Honeymoon Special"
-              className="w-full  object-cover"
+              width={800}
+              height={533}
+              className="w-full object-cover h-auto"
             />
             <div className="p-4">
               <h3 className="text-center text-xl font-medium">Honeymoon Special</h3>
@@ -37,10 +43,12 @@ const Page = () => {
           {/* Breakfast Special */}
           <Link href="/gallery">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img
-              src="./assets/packages/BreakfastImg.png"
+            <Image
+              src="/assets/packages/BreakfastImg.png"
               alt="Breakfast Special"
-              className="w-full  object-cover"
+              width={800}
+              height={533}
+              className="w-full object-cover h-auto"
             />
             <div className="p-4">
               <h3 className="text-center text-xl font-medium">Breakfast Special</h3>

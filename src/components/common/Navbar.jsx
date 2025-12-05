@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
 const Navbar = () => {
@@ -76,11 +77,13 @@ const Navbar = () => {
       <div className="w-[90%] mx-auto flex justify-between items-center ">
         {/* Logo */}
         <Link href="/">
-          <img
-            style={{width: "100px"}}
+          <Image
             src="https://res.cloudinary.com/dqggm4k7u/image/upload/v1752484737/logo-white_yexdbw.png"
             alt="Novello Hotels Logo"
-            onError={(e) => (e.target.src = "/fallback-logo.png")}
+            width={100}
+            height={40}
+            className="h-auto w-[100px]"
+            priority
           />
         </Link>
  

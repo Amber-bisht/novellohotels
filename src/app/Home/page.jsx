@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import About from "@/components/About";
 import Link from "next/link";
@@ -23,10 +24,13 @@ const Page = () => {
       <div>
         <section className="relative h-screen">
           <div className="absolute inset-0">
-            <img
-              src="./assets/Homepic/bghome.png"
+            <Image
+              src="/assets/Homepic/bghome.png"
               alt="Luxury Hotel"
-              className="w-full h-full object-cover"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           </div>
@@ -65,30 +69,36 @@ const Page = () => {
         </h1>
         <div className="flex flex-col md:flex-row mx-auto items-center justify-evenly mt-10 space-y-6 md:space-y-0">
           <div className="relative">
-            <img
-              src="./assets/Homepic/pic1.png"
+            <Image
+              src="/assets/Homepic/pic1.png"
               alt="Wifi and Internet"
-              className="rounded-lg shadow-lg w-80 md:w-96"
+              width={384}
+              height={256}
+              className="rounded-lg shadow-lg w-80 md:w-96 h-auto"
             />
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-0 text-white text-lg font-semibold px-4 py-2 rounded">
               Wifi and Internet
             </div>
           </div>
           <div className="relative">
-            <img
+            <Image
               src="https://res.cloudinary.com/dqggm4k7u/image/upload/v1752485920/balcony_image_hyl9hw.jpg"
               alt="Private Balcony"
-              className="rounded-lg shadow-lg w-80 md:w-96"
+              width={384}
+              height={256}
+              className="rounded-lg shadow-lg w-80 md:w-96 h-auto"
             />
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-0 text-white text-lg font-semibold px-4 py-2 rounded">
               Private Balcony
             </div>
           </div>
           <div className="relative">
-            <img
-              src="./assets/Homepic/comfortable.png"
+            <Image
+              src="/assets/Homepic/comfortable.png"
               alt="Comfortable Rooms"
-              className="rounded-lg shadow-lg w-80 md:w-96"
+              width={384}
+              height={256}
+              className="rounded-lg shadow-lg w-80 md:w-96 h-auto"
             />
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-0 text-white text-lg font-semibold px-2 py-2 rounded text-center">
               Comfortable Rooms
@@ -115,12 +125,12 @@ const Page = () => {
           Our Best<span className="text-[#9A3D50]">Amenities</span>
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-9 place-items-center">
-          <img src="./assets/Amenities/Ameniteies1.png" alt="Amenity 1" />
-          <img src="./assets/Amenities/Ameniteies2.png" alt="Amenity 2" />
-          <img src="./assets/Amenities/Ameniteies3.png" alt="Amenity 3" />
-          <img src="./assets/Amenities/Ameniteies4.png" alt="Amenity 4" />
-          <img src="./assets/Amenities/Ameniteies5.png" alt="Amenity 5" />
-          <img src="./assets/Amenities/Ameniteies6.png" alt="Amenity 6" />
+          <Image src="/assets/Amenities/Ameniteies1.png" alt="Amenity 1" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies2.png" alt="Amenity 2" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies3.png" alt="Amenity 3" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies4.png" alt="Amenity 4" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies5.png" alt="Amenity 5" width={400} height={250} className="h-auto w-full max-w-[400px]" />
+          <Image src="/assets/Amenities/Ameniteies6.png" alt="Amenity 6" width={400} height={250} className="h-auto w-full max-w-[400px]" />
         </div>
       </div>
 

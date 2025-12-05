@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -65,11 +66,14 @@ const ImageCarousel = () => {
         <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-xl">
           <div className="flex h-full">
             {/* Mobile view (single image) */}
-            <div className="w-full h-full block md:hidden">
-              <img
+            <div className="w-full h-full block md:hidden relative">
+              <Image
                 src={images[currentIndex].url}
                 alt={`Slide ${currentIndex + 1}`}
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw"
+                className="object-cover"
+                priority
               />
             </div>
 
@@ -80,16 +84,18 @@ const ImageCarousel = () => {
                 return (
                   <div
                     key={index}
-                    className="w-1/3 h-full"
+                    className="w-1/3 h-full relative"
                   >
-                    <img
+                    <Image
                       src={images[index].url}
                       alt={`Slide ${index + 1}`}
-                      className={`w-full h-full ${
+                      fill
+                      sizes="(min-width: 768px) 33vw"
+                      className={`rounded-lg ${
                         images[index].orientation === 'portrait' 
                           ? 'object-contain bg-gray-100' 
                           : 'object-cover'
-                      } rounded-lg`}
+                      }`}
                     />
                   </div>
                 );

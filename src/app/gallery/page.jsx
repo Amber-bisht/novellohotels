@@ -1,6 +1,7 @@
 'use client';
 
 import { fetchGallery } from '@/lib/apis';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const Gallery = () => {
@@ -106,11 +107,12 @@ const Gallery = () => {
               onClick={() => setModalImage(image.photoLink)}
             >
               <div className="relative group overflow-hidden rounded-lg">
-                <img
+                <Image
                   src={image.photoLink}
                   alt={`${image.category} ${image._id}`}
+                  width={800}
+                  height={600}
                   className="w-full h-auto object-cover transition duration-300 group-hover:scale-105"
-                  loading="lazy"
                 />
               </div>
             </div>
@@ -124,7 +126,7 @@ const Gallery = () => {
             onClick={() => setModalImage(null)}
           >
             <div 
-              className="relative max-w-5xl w-full h-full flex items-center justify-center"
+              className="relative max-w-5xl w-full h-full min-h-[300px] flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -133,10 +135,13 @@ const Gallery = () => {
               >
                 ✕
               </button>
-              <img
+              <Image
                 src={modalImage}
                 alt="Modal view"
-                className="max-h-[90vh] max-w-full object-contain rounded-lg"
+                fill
+                sizes="90vw"
+                className="object-contain rounded-lg"
+                priority
               />
             </div>
           </div>

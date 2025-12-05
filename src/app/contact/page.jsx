@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from "react";
+import Image from "next/image";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -27,10 +28,13 @@ const ContactPage = () => {
     <div className=" h-full bg-pink-100">
       {/* Hero Section */}
       <div className="relative w-full h-[500px]">
-        <img
-          src="./assets/contact/contact.png"
+        <Image
+          src="/assets/contact/contact.png"
           alt="Welcome"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
           <h1 className="text-white text-4xl md:text-6xl font-bold text-center">
