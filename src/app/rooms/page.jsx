@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { fetchRooms } from "../../lib/apis";
+import { ArrowRight, Users, BedDouble, Wifi, Maximize } from "lucide-react";
 
 const RoomsPage = () => {
   const rooms = [
@@ -10,37 +11,29 @@ const RoomsPage = () => {
       id: 1,
       name: "Deluxe Room",
       description: "Indulge in luxury at our Deluxe Rooms in the heart of Mussoorie.",
-      // price: 3000,
-      // status: "Available",
-      // guests: 2,
-      // bed: 1,
       image: "./assets/Homepic/room1.webp",
       link: "https://live.ipms247.com/booking/book-rooms-thenovelloglobehotel",
+      size: "250 sq.ft",
+      occupancy: "2 Adults",
     },
     {
       id: 2,
       name: "Executive With View",
-      description: "Indulge in luxury at our Deluxe Rooms in the heart of Mussoorie.",
-      // price: 6000,
-      // status: "Available",
-      // guests: 2,
-      // bed: 1,
+      description: "Experience breathtaking valley views from your refined sanctuary.",
       image: "./assets/Homepic/room3.webp",
       link: "https://live.ipms247.com/booking/book-rooms-thenovelloglobehotel",
+      size: "300 sq.ft",
+      occupancy: "2 Adults, 1 Child",
     },
     {
       id: 3,
-      name: "Executive With Balcony And View",
-      description: "Indulge in luxury at our Deluxe Rooms in the heart of Mussoorie.",
-      // price: 4000,
-      // status: "Available",
-      // guests: 3,
-      // bed: 1,
+      name: "Executive With Balcony",
+      description: "Step out onto your private balcony and breathe in the fresh mountain air.",
       image: "./assets/Homepic/room2.webp",
       link: "https://live.ipms247.com/booking/book-rooms-thenovelloglobehotel",
-      
+      size: "350 sq.ft",
+      occupancy: "3 Adults",
     },
-    
   ];
 
   const [allRooms, setAllRooms] = useState([]);
@@ -49,10 +42,10 @@ const RoomsPage = () => {
     const getRooms = async () => {
       try {
         const data = await fetchRooms();
-        console.log("rooms data", data?.room)
+        // console.log("rooms data", data?.room)
         setAllRooms(data?.room);
       } catch (err) {
-        setError("Failed to fetch users.");
+        // setError("Failed to fetch users.");
       }
     };
 
@@ -61,112 +54,80 @@ const RoomsPage = () => {
 
 
   return (
-    <div className="pt-24">
+    <div className="bg-white">
+      {/* --- HERO SECTION --- */}
       <div className="relative w-full h-[60vh]">
         <Image
           src="/assets/rooms/roomimg.webp"
           alt="Rooms Designed for Your Comfort"
           fill
           priority
-          sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white text-center">
-            Rooms Designed for Your Comfort
+        <div className="absolute inset-0 bg-navy/60 mix-blend-multiply"></div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <h3 className="text-gold uppercase tracking-[0.2em] text-sm md:text-base mb-4 font-bold animate-fadeIn">
+            Stay With Us
+          </h3>
+          <h1 className="text-white text-5xl md:text-7xl font-serif font-bold mb-6 drop-shadow-lg">
+            Sanctuaries of <span className="italic text-gold">Comfort</span>
           </h1>
+          <p className="text-gray-200 text-lg font-light max-w-xl">
+            Every room is a masterpiece of design, offering warmth and luxury in the hills.
+          </p>
         </div>
       </div>
 
-      <div className="container mx-auto my-10 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* --- ROOMS GRID --- */}
+      <div className="container mx-auto my-20 px-6 lg:px-12">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-serif text-navy mb-4">Our Accommodations</h2>
+          <div className="w-16 h-1 bg-gold mx-auto"></div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {rooms.map((room) => (
-            <div key={room.id} className="border rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src={room.image.replace("./", "/")}
-                alt={room.name}
-                width={600}
-                height={360}
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{room.name}</h3>
-                <p className="text-sm text-gray-600 mb-2">{room.description}</p>
-                {/* <p className="text-lg font-semibold text-[#9A3D50] mb-4">
-                  ₹ {room.price} / Night
-                </p> */}
-                {/* <div className="text-sm text-gray-600 mb-4">
-                  <p>
-                    Status: <span className="text-green-600">{room.status}</span>
-                  </p>
-                  <p>Guests: {room.guests}</p>
-                  <p>Bed: {room.bed}</p>
-                </div> */}
-                <div className="flex justify-between items-center">
-                  <Link href="https://live.ipms247.com/booking/book-rooms-thenovelloglobehotel" target="_blank">
-                    <button
+            <div key={room.id} className="group bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+              {/* Image Container */}
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src={room.image.replace("./", "/")}
+                  alt={room.name}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+              </div>
 
-                      className="bg-[#9A3D50] text-white py-2 px-4 rounded hover:bg-[#9A3D50]/80"
-                    >
-                      Book Now
+              {/* Content */}
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-2xl font-serif text-navy mb-3 group-hover:text-gold transition-colors">{room.name}</h3>
+                <p className="text-gray-600 font-light mb-6 flex-grow leading-relaxed">{room.description}</p>
+
+                {/* Amenities Row (Mock Data for Visuals) */}
+                <div className="flex items-center gap-4 text-gray-400 text-sm mb-6 pt-4 border-t border-gray-100">
+                  <div className="flex items-center gap-1"><Maximize className="w-4 h-4" /> <span>{room.size}</span></div>
+                  <div className="flex items-center gap-1"><Users className="w-4 h-4" /> <span>{room.occupancy}</span></div>
+                  <div className="flex items-center gap-1"><Wifi className="w-4 h-4" /> <span>Free Wifi</span></div>
+                </div>
+
+                {/* Footer / Action */}
+                <div className="mt-auto">
+                  <Link href={room.link} target="_blank" className="block">
+                    <button className="w-full bg-navy text-white py-4 px-6 rounded-sm hover:bg-brand transition-colors flex items-center justify-center gap-2 uppercase tracking-wider text-sm font-medium">
+                      Book Now <ArrowRight className="w-4 h-4" />
                     </button>
                   </Link>
-                  {/* <Link href={room.link} className="text-[#9A3D50] hover:underline">
-                    View more &gt;
-                  </Link> */}
                 </div>
               </div>
             </div>
           ))}
         </div>
 
+        {/* Dynamic Rooms Section (Hidden/Placeholder if needed really, but matching style) */}
+        {/* If user uncommented dynamic code, they should use similar styling */}
 
-        {/* dynamic with admin code  */}
-
-
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {allRooms.filter(room => room?.roomStatus === 'Available').map((room) => (
-            <div key={room._id} className="border rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src={room?.roomImage[0]}
-                alt={room?.roomName}
-                width={600}
-                height={360}
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{room?.roomName}</h3>
-                <p className="text-sm text-gray-600 mb-2">{room?.description}</p>
-                <p className="text-lg font-semibold text-[#9A3D50] mb-4">
-                  ₹ {room?.rate} / Night
-                </p>
-                <div className="text-sm text-gray-600 mb-4">
-                  <p>
-                    Status: <span className="text-green-600">{room?.roomStatus}</span>
-                  </p>
-                  <p>Guests: {room?.guestCount}</p>
-                  <p>Bed: {room?.bedCount}</p>
-                </div>
-                <div className="flex justify-between items-center">
-                  <Link href={`/rooms/${room?.slug}`}>
-                    <button
-
-                      className="bg-[#9A3D50] text-white py-2 px-4 rounded hover:bg-[#9A3D50]/80"
-                    >
-                      Book Now
-                    </button>
-                  </Link>
-                  <Link href={`/rooms/${room?.slug}`} className="text-[#9A3D50] hover:underline">
-                    View more &gt;
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div> */}
       </div>
-
-
     </div>
   );
 };

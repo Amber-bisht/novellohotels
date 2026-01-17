@@ -1,87 +1,115 @@
 import React from "react";
-import { FaUserShield, FaInfoCircle, FaUserAlt, FaShareAlt, FaUserCheck, FaEdit } from "react-icons/fa";
+import { Shield, Info, User, Share2, UserCheck, Edit } from "lucide-react";
 
 const PrivacyPolicyPage = () => {
   return (
-    <div className="min-h-screen bg-pink-100">
-      <div className="flex flex-col justify-center items-center w-[90%] mx-auto py-10">
-        <h1 className="text-4xl font-extrabold text-gray-800 mb-6 mt-24">Privacy Policy</h1>
+    <div className="min-h-screen bg-cream py-24 md:py-32 px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-serif text-navy mb-6">Privacy Policy</h1>
+          <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
+          <p className="text-lg text-gray-600 leading-relaxed font-light">
+            At <span className="font-semibold text-navy">Novello Hotels</span>, we are committed to safeguarding your personal information and respecting your privacy.
+            This detailed policy outlines how we collect, use, and protect your data.
+          </p>
+        </div>
 
-        <p className="text-center text-lg text-gray-700 mb-10">
-          At Novello Hotels, we are committed to safeguarding your personal information and respecting your privacy. This Privacy Policy explains
-          how we collect, use, and protect your personal data when you use our website. By accessing and using our website, you agree to the terms
-          of this Privacy Policy.
-        </p>
+        <div className="bg-white shadow-xl rounded-2xl p-8 md:p-12 border border-gray-100 space-y-10">
 
-        <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-4xl">
-          <div className="mb-6">
-            <div className="flex items-center gap-3 mb-2">
-              <FaUserAlt className="text-blue-500 text-xl" />
-              <h2 className="text-xl font-bold text-gray-800">Collection of Personal Information</h2>
+          {/* Section 1 */}
+          <div className="flex gap-6">
+            <div className="flex-shrink-0 mt-1">
+              <div className="w-10 h-10 bg-navy/5 rounded-full flex items-center justify-center">
+                <User className="text-gold w-5 h-5" />
+              </div>
             </div>
-            <p className="text-gray-600">
-              We may collect personal information from you when you make a reservation, sign up for our loyalty program, subscribe to our newsletter,
-              or otherwise interact with our website. This information may include your name, email address, phone number, postal address, credit
-              card information, and other details relevant to your stay or the services you request.
-            </p>
+            <div>
+              <h2 className="text-xl font-serif text-navy mb-3">Collection of Personal Information</h2>
+              <p className="text-gray-600 font-light leading-relaxed">
+                We may collect personal information from you when you make a reservation, sign up for our loyalty program, or subscribe to our newsletter.
+                This includes your name, email, phone number, and payment details necessary to provide our services.
+              </p>
+            </div>
           </div>
 
-          <div className="mb-6">
-            <div className="flex items-center gap-3 mb-2">
-              <FaInfoCircle className="text-green-500 text-xl" />
-              <h2 className="text-xl font-bold text-gray-800">Use of Personal Information</h2>
+          {/* Section 2 */}
+          <div className="flex gap-6">
+            <div className="flex-shrink-0 mt-1">
+              <div className="w-10 h-10 bg-navy/5 rounded-full flex items-center justify-center">
+                <Info className="text-gold w-5 h-5" />
+              </div>
             </div>
-            <p className="text-gray-600">
-              We use your personal information to provide you with the services you request, such as making a reservation or responding to your
-              inquiries. We may also use your information to personalize your experience, send you promotional materials, improve our website and
-              services, and for other legitimate business purposes.
-            </p>
+            <div>
+              <h2 className="text-xl font-serif text-navy mb-3">Use of Personal Information</h2>
+              <p className="text-gray-600 font-light leading-relaxed">
+                We use your data to facilitate reservations, respond to inquiries, and personalize your experience.
+                We may also use it to improve our services and send relevant promotional materials with your consent.
+              </p>
+            </div>
           </div>
 
-          <div className="mb-6">
-            <div className="flex items-center gap-3 mb-2">
-              <FaShareAlt className="text-purple-500 text-xl" />
-              <h2 className="text-xl font-bold text-gray-800">Sharing of Personal Information</h2>
+          {/* Section 3 */}
+          <div className="flex gap-6">
+            <div className="flex-shrink-0 mt-1">
+              <div className="w-10 h-10 bg-navy/5 rounded-full flex items-center justify-center">
+                <Share2 className="text-gold w-5 h-5" />
+              </div>
             </div>
-            <p className="text-gray-600">
-              We may share your personal information with third-party service providers who help us provide our services, such as payment processors,
-              marketing agencies, and IT support companies. We may also share your information with government authorities or law enforcement
-              agencies as required by law.
-            </p>
+            <div>
+              <h2 className="text-xl font-serif text-navy mb-3">Sharing of Information</h2>
+              <p className="text-gray-600 font-light leading-relaxed">
+                We generally do not share your personal information, except with trusted third-party service providers (payment processors, IT support)
+                necessary for our operations, or when required by law.
+              </p>
+            </div>
           </div>
 
-          <div className="mb-6">
-            <div className="flex items-center gap-3 mb-2">
-              <FaUserCheck className="text-teal-500 text-xl" />
-              <h2 className="text-xl font-bold text-gray-800">Your Rights</h2>
+          {/* Section 4 */}
+          <div className="flex gap-6">
+            <div className="flex-shrink-0 mt-1">
+              <div className="w-10 h-10 bg-navy/5 rounded-full flex items-center justify-center">
+                <UserCheck className="text-gold w-5 h-5" />
+              </div>
             </div>
-            <p className="text-gray-600">
-              You have the right to access, correct, or delete the personal information that we hold. You may also have the right to object to or
-              restrict our use of your information or to request that we provide your information to you or to a third party in a structured,
-              machine-readable format. To exercise these rights, please contact us using the contact information provided below.
-            </p>
+            <div>
+              <h2 className="text-xl font-serif text-navy mb-3">Your Rights</h2>
+              <p className="text-gray-600 font-light leading-relaxed">
+                You have the right to access, correct, or delete your personal data held by us.
+                Please contact us if you wish to exercise these rights regarding your information.
+              </p>
+            </div>
           </div>
 
-          <div className="mb-6">
-            <div className="flex items-center gap-3 mb-2">
-              <FaEdit className="text-orange-500 text-xl" />
-              <h2 className="text-xl font-bold text-gray-800">Changes to this Privacy Policy</h2>
+          {/* Section 5 */}
+          <div className="flex gap-6">
+            <div className="flex-shrink-0 mt-1">
+              <div className="w-10 h-10 bg-navy/5 rounded-full flex items-center justify-center">
+                <Edit className="text-gold w-5 h-5" />
+              </div>
             </div>
-            <p className="text-gray-600">
-              We may update this Privacy Policy from time to time by posting a revised version on our website. Your continued use of our website after
-              any changes to this Privacy Policy will constitute your acceptance of the changes.
-            </p>
+            <div>
+              <h2 className="text-xl font-serif text-navy mb-3">Policy Updates</h2>
+              <p className="text-gray-600 font-light leading-relaxed">
+                We may obtain the right to update this policy. Any changes will be posted here, and your continued use of our services constitutes acceptance of these changes.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <div className="flex items-center gap-3 mb-2">
-              <FaUserShield className="text-red-500 text-xl" />
-              <h2 className="text-xl font-bold text-gray-800">Contact Us</h2>
+          {/* Section 6 */}
+          <div className="flex gap-6">
+            <div className="flex-shrink-0 mt-1">
+              <div className="w-10 h-10 bg-navy/5 rounded-full flex items-center justify-center">
+                <Shield className="text-gold w-5 h-5" />
+              </div>
             </div>
-            <p className="text-gray-600">
-              If you have any questions or concerns about this Privacy Policy or our use of your personal information, please contact us.
-            </p>
+            <div>
+              <h2 className="text-xl font-serif text-navy mb-3">Contact Us</h2>
+              <p className="text-gray-600 font-light leading-relaxed">
+                If you have questions about our privacy practices, please reach out to us directly through our contact page.
+              </p>
+            </div>
           </div>
+
         </div>
       </div>
     </div>

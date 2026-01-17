@@ -3,6 +3,20 @@ import Script from "next/script";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import "./globals.css";
+import { Playfair_Display, Lato } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--font-lato",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Novello Globe Hotels & Resorts",
@@ -28,7 +42,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfair.variable} ${lato.variable}`}>
       <Head>
         {/* Favicon and metadata */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -64,7 +78,7 @@ export default function RootLayout({ children }) {
         }}
       />
 
-      <body>
+      <body className="font-sans antialiased text-gray-900 bg-[#F9F9F7]">
         <Navbar />
         <main>{children}</main>
         <Footer />

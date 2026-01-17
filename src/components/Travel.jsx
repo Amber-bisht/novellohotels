@@ -3,20 +3,27 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { MapPin } from 'lucide-react';
 
 const DestinationCards = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 1,
+    speed: 700,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true,
+    autoplaySpeed: 4000,
+    arrows: false,
     responsive: [
       {
-        breakpoint: 640, // Small screens
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
         },
@@ -25,72 +32,61 @@ const DestinationCards = () => {
   };
 
   const cardData = [
-    { src: "/assets/Homepic/Lal.webp", title: "Lal Tibba  - Mussoorie" },
-    { src: "/assets/Homepic/kempty.webp", title: "Kempty falls - Mussoorie" },
-    { src: "/assets/Homepic/George.webp", title: "George Everest - Mussoorie" },
-    { src: "/assets/Homepic/Landour.webp", title: "Landour - Mussoorie" },
+    { src: "/assets/Homepic/Lal.webp", title: "Lal Tibba", subtitle: "Mussoorie's Highest Peak" },
+    { src: "/assets/Homepic/kempty.webp", title: "Kempty Falls", subtitle: "Cascading Waterfalls" },
+    { src: "/assets/Homepic/George.webp", title: "George Everest", subtitle: "Historic Peak & Views" },
+    { src: "/assets/Homepic/Landour.webp", title: "Landour", subtitle: "Colonial Charm & Silence" },
   ];
 
   return (
-    <div className=" mt-12 mb-8 flex justify-center items-center ">
-      <div className="w-full max-w-7xl px-4">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">
-            Beautiful Travel Destinations
-          </h1>
-        </div>
-        {/* Large screens - All cards visible */}
-        <div className="hidden lg:grid lg:grid-cols-4 lg:gap-8 lg:justify-center">
-          {cardData.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
-            >
+    <div className="w-full relative">
+      {/* Custom styles for slick dots */}
+      <style jsx global>{`
+          .slick-dots li button:before {
+            color: #C6A87C !important;
+            opacity: 0.5;
+            font-size: 10px;
+          }
+          .slick-dots li.slick-active button:before {
+            color: #C6A87C !important;
+            opacity: 1;
+            font-size: 14px;
+          }
+          .slick-slide {
+            padding: 0 10px; // Gap between slides
+          }
+        `}</style>
+
+      <Slider {...settings} className="-mx-3">
+        {cardData.map((card, index) => (
+          <div key={index} className="outline-none">
+            <div className="group relative h-[450px] w-full rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
               <Image
                 src={card.src}
                 alt={card.title}
-                width={400}
-                height={256}
-                className="w-full h-64 object-cover rounded-t-lg"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="p-4">
-                <h2 className="font-semibold text-lg text-gray-900 mb-2 truncate">
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 w-full p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <div className="flex items-center gap-2 text-gold mb-2 opacity-80">
+                  <MapPin size={16} />
+                  <span className="bg-gold/20 px-2 py-0.5 rounded text-xs uppercase tracking-wider font-semibold">Nearby</span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-white mb-1">
                   {card.title}
                 </h2>
-                {/* <p className="text-gray-600">
-                  Discover the beauty of this destination.
-                </p> */}
+                <p className="text-gray-300 font-light text-sm transform opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                  {card.subtitle}
+                </p>
               </div>
             </div>
-          ))}
-        </div>
-        {/* Small screens - Carousel */}
-        <div className="lg:hidden">
-          <Slider {...settings}>
-            {cardData.map((card, index) => (
-              <div key={index} className="px-3">
-                <div className="bg-white border border-gray-200 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                  <Image
-                    src={card.src}
-                    alt={card.title}
-                    width={400}
-                    height={256}
-                    className="w-full h-64 object-cover rounded-t-lg"
-                  />
-                  <div className="p-4">
-                    <h2 className="font-semibold text-lg text-gray-900 mb-2 truncate">
-                      {card.title}
-                    </h2>
-                    <p className="text-gray-600">
-                      Discover the beauty of this destination.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };
