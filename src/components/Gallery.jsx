@@ -1,66 +1,66 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
-const ImageCarousel = () => {
-  // Hard-coded images (no API call)
-  const images = [
-    {
-      url: "/downloaded-webp/hvwpgsg3c9rp8pf8glfq.webp",
-      orientation: "landscape"
-    },
-    {
-      url: "/downloaded-webp/tidkepodsxahu7k9mq46.webp",
-      orientation: "portrait"
-    },
-    {
-      url: "/downloaded-webp/yhdrqposgkdqx7eqwtr1.webp",
-      orientation: "landscape"
-    },
-    {
-      url: "/downloaded-webp/w8nwgpts09rwwptcbnqq.webp",
-      orientation: "landscape"
-    },
-    {
-      url: "/downloaded-webp/rkb1mccwjdezeehmvbhs.webp",
-      orientation: "portrait"
-    },
-    {
-      url: "/downloaded-webp/fc4epsh3jhpenmihm7ul.webp",
-      orientation: "landscape"
-    },
-    {
-      url: "/downloaded-webp/tidkepodsxahu7k9mq46.webp",
-      orientation: "landscape"
-    },
-  ];
+// Hard-coded images (no API call)
+const IMAGES = [
+  {
+    url: "/downloaded-webp/hvwpgsg3c9rp8pf8glfq.webp",
+    orientation: "landscape"
+  },
+  {
+    url: "/downloaded-webp/tidkepodsxahu7k9mq46.webp",
+    orientation: "portrait"
+  },
+  {
+    url: "/downloaded-webp/yhdrqposgkdqx7eqwtr1.webp",
+    orientation: "landscape"
+  },
+  {
+    url: "/downloaded-webp/w8nwgpts09rwwptcbnqq.webp",
+    orientation: "landscape"
+  },
+  {
+    url: "/downloaded-webp/rkb1mccwjdezeehmvbhs.webp",
+    orientation: "portrait"
+  },
+  {
+    url: "/downloaded-webp/fc4epsh3jhpenmihm7ul.webp",
+    orientation: "landscape"
+  },
+  {
+    url: "/downloaded-webp/tidkepodsxahu7k9mq46.webp",
+    orientation: "landscape"
+  },
+];
 
+const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === IMAGES.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, []);
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? IMAGES.length - 1 : prevIndex - 1
     );
   };
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextSlide]);
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
         Our Gallery
       </h1>
-      
+
       <div className="relative">
         {/* Main carousel container */}
         <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-xl">
@@ -68,7 +68,7 @@ const ImageCarousel = () => {
             {/* Mobile view (single image) */}
             <div className="w-full h-full block md:hidden relative">
               <Image
-                src={images[currentIndex].url}
+                src={IMAGES[currentIndex].url}
                 alt={`Slide ${currentIndex + 1}`}
                 fill
                 sizes="(max-width: 768px) 100vw"
@@ -80,22 +80,21 @@ const ImageCarousel = () => {
             {/* Desktop view (3 images) */}
             <div className="hidden md:flex w-full h-full gap-4">
               {[-1, 0, 1].map((offset) => {
-                const index = (currentIndex + offset + images.length) % images.length;
+                const index = (currentIndex + offset + IMAGES.length) % IMAGES.length;
                 return (
                   <div
                     key={index}
                     className="w-1/3 h-full relative"
                   >
                     <Image
-                      src={images[index].url}
+                      src={IMAGES[index].url}
                       alt={`Slide ${index + 1}`}
                       fill
                       sizes="(min-width: 768px) 33vw"
-                      className={`rounded-lg ${
-                        images[index].orientation === 'portrait' 
-                          ? 'object-contain bg-gray-100' 
+                      className={`rounded-lg ${IMAGES[index].orientation === 'portrait'
+                          ? 'object-contain bg-gray-100'
                           : 'object-cover'
-                      }`}
+                        }`}
                     />
                   </div>
                 );
@@ -122,12 +121,11 @@ const ImageCarousel = () => {
 
         {/* Slide indicators */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-          {images.map((_, index) => (
+          {IMAGES.map((_, index) => (
             <div
               key={index}
-              className={`w-2 h-2 rounded-full ${
-                currentIndex === index ? 'bg-white' : 'bg-white/50'
-              }`}
+              className={`w-2 h-2 rounded-full ${currentIndex === index ? 'bg-white' : 'bg-white/50'
+                }`}
             />
           ))}
         </div>

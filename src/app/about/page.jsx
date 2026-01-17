@@ -40,7 +40,7 @@ const page = () => {
             </p>
 
             <p>
-              Whether you're here for <span className="italic text-gray-800">business, leisure, or a special occasion</span>, we provide a unique experience that caters to your every need.
+              Whether you&apos;re here for <span className="italic text-gray-800">business, leisure, or a special occasion</span>, we provide a unique experience that caters to your every need.
               Our beautifully designed rooms and suites are thoughtfully equipped with state-of-the-art amenities and plush furnishings to ensure a relaxing and enjoyable stay.
             </p>
 
@@ -53,7 +53,7 @@ const page = () => {
             </p>
 
             <p className="font-serif text-2xl text-navy italic mt-8">
-              "We look forward to welcoming you!"
+              &quot;We look forward to welcoming you!&quot;
             </p>
           </div>
         </div>

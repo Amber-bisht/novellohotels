@@ -42,7 +42,7 @@ const About = () => {
           </p>
 
           <p className="text-gray-600 leading-relaxed mb-10 font-light text-lg hidden md:block">
-            With 15 meticulously designed rooms, we cater to every traveler's desire for comfort and style. Whether it's a romantic retreat, a family holiday, or a business escape, we ensure a memorable stay tailored to your needs.
+            With 15 meticulously designed rooms, we cater to every traveler&apos;s desire for comfort and style. Whether it&apos;s a romantic retreat, a family holiday, or a business escape, we ensure a memorable stay tailored to your needs.
           </p>
 
           <Link href="/about">

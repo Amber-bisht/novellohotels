@@ -2,11 +2,14 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-    reactStrictMode: true,
-    images: {
-      domains: ['res.cloudinary.com', 'novellohotels.com'], // Allowed image domains
-    },
-  };
-  
-  export default nextConfig;
-  
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'res.cloudinary.com' },
+      { protocol: 'https', hostname: 'novellohotels.com' },
+      { protocol: 'https', hostname: 'i.pinimg.com' },
+    ],
+  },
+};
+
+export default nextConfig;
